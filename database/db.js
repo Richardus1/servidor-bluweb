@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(process.env.URI, { useNewUrlParser: true, useUnifiedTopology: true })
+/* const dbuser = "nuevo";
+const password = "Az1LVqpJOanxrtiG";
+const dbname = "chatbotRikkoDb"; */
+//const URI = `mongodb://localhost/NuevoDB`;
+
+mongoose.connect(process.env.URI)
   .then(() => console.log("DB conectada 👌"))
-  .catch(e => console.log("Error de coneccion a DB " + e))
+  .catch((e) => console.log("Error de conección a DB " + e))
+
 
 
