@@ -1,11 +1,9 @@
 const express = require ("express");
 const { create } = require('express-handlebars');
 
-//prueba de base de datos alterna
-/* const mostrar = require("./controllers/mostrar");
 require("dotenv").config();
 require("./database/db");
-require("./models/persona"); */
+ 
 
 const app = express();
 

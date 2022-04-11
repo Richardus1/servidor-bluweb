@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-/* const dbuser = "nuevo";
+/*  const dbuser = "nuevo";
 const password = "Az1LVqpJOanxrtiG";
-const dbname = "chatbotRikkoDb"; */
-//const URI = `mongodb://localhost/NuevoDB`;
+const dbname = "chatbotRikkoDb";
+const URI = `mongodb://localhost/NuevoDB`; */
 
 mongoose.connect(process.env.URI)
   .then(() => console.log("DB conectada 👌"))
