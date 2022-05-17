@@ -36,8 +36,8 @@ const registerUser = async (req, res)=>{
       host: "smtp.mailtrap.io",
       port: 2525,
       auth: {
-        user: process.env.userEmail,
-        pass: process.env.passEmail
+        user: process.env.USEREMAIL,
+        pass: process.env.PASSEMAIL
       }
     });
 
@@ -45,7 +45,9 @@ const registerUser = async (req, res)=>{
       from: '"Fred Foo 👻" <foo@example.com>', // sender address
       to: user.email, // list of receivers
       subject: "Verifica tu cuenta de correo", // Subject line
-      html:`<a href="http://localhost:3000/auth/confirmar/${user.tokenConfirm}">Verifica tu cuenta aquí</a>`, // html body
+      html:`<a href="${
+        process.env.PATHHROKU || "http://localhost:3000"
+      } /auth/confirmar/${user.tokenConfirm}">Verifica tu cuenta aquí</a>`, // html body
     });
 
     req.flash("mensajes", [{msg: "Revisa tu correo y valida tu cuenta"}]);

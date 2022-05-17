@@ -1,13 +1,15 @@
+const { config } = require("dotenv");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
-/*  const dbuser = "nuevo";
-const password = "Az1LVqpJOanxrtiG";
-const dbname = "chatbotRikkoDb";
-const URI = `mongodb://localhost/NuevoDB`; */
+const clienteDb = mongoose.connect(process.env.URI)
+  .then((m) => {
+    console.log("DB conectada 👌")
+    return m.connection.getClient()
+  })
+  .catch((e) => console.log("Error de conección a DB " + e));
 
-mongoose.connect(process.env.URI)
-  .then(() => console.log("DB conectada 👌"))
-  .catch((e) => console.log("Error de conección a DB " + e))
+module.exports = clienteDb
 
 
 
