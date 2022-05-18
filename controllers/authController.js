@@ -47,7 +47,7 @@ const registerUser = async (req, res)=>{
       subject: "Verifica tu cuenta de correo", // Subject line
       html:`<a href="${
         process.env.PATHHROKU || "http://localhost:3000"
-      } /auth/confirmar/${user.tokenConfirm}">Verifica tu cuenta aquí</a>`, // html body
+      }auth/confirmar/${user.tokenConfirm}">Verifica tu cuenta aquí</a>`, // html body
     });
 
     req.flash("mensajes", [{msg: "Revisa tu correo y valida tu cuenta"}]);
